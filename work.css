@@ -16,23 +16,53 @@ body {
 /* GNB */
 .gnb {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 64px; /* 고정 높이 */
+  height: 64px;
   border-bottom: 1px solid #666;
   background: #fff;
+  padding: 0 30px;  /* 좌우 여백 */
 }
 
+.gnb-left .contact,
+.gnb-right .contact {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.gnb-center {
+  display: flex;
+  gap: 0; /* 메뉴 사이 붙이기 */
+}
+
+.gnb-center a {
+  padding: 0 15px; /* 메뉴 간격 조절 */
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+.gnb-center a:hover {
+  text-decoration: underline;
+}
+
+/* 모든 GNB 링크 공통 스타일 */
 .gnb a {
   display: flex;
   align-items: center;
-  height: 100%;           /* 부모 높이에 맞춤 */
-  padding: 0 30px;
+  height: 100%;
   text-decoration: none;
   color: #000;
   font-size: 18px;
   font-family: "Times New Roman", Times, serif;
-  line-height: 1;         /* 폰트 고유 여백 최소화 */
+  line-height: 1;
+}
+
+/* 가운데 메뉴 전용 */
+.gnb-center a {
+  padding: 0 15px; /* 메뉴 간격 여기서만 제어 */
 }
 
 

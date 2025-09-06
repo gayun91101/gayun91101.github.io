@@ -19,27 +19,53 @@ body {
 /* GNB */
 .gnb {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 64px; /* 고정 높이 */
+  height: 64px;
   border-bottom: 1px solid #666;
   background: #fff;
+  padding: 0 30px;  /* 좌우 여백 */
+}
+
+.gnb-left .contact,
+.gnb-right .contact {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.gnb-center {
+  display: flex;
+  gap: 0; /* 메뉴 사이 붙이기 */
+}
+
+.gnb-center a {
+  padding: 0 15px; /* 메뉴 간격 조절 */
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+.gnb-center a:hover {
+  text-decoration: underline;
 }
 
 .gnb a {
   display: flex;
   align-items: center;
-  height: 100%;           /* 부모 높이에 맞춤 */
-  padding: 0 30px;
+  height: 100%;
   text-decoration: none;
   color: #000;
   font-size: 18px;
   font-family: "Times New Roman", Times, serif;
-  line-height: 1;         /* 폰트 고유 여백 최소화 */
+  line-height: 1;
 }
 
+.gnb a:hover {
+  text-decoration: underline;
+}
 
-.gnb a:hover { text-decoration: underline; }
 
 
 /* ===== 전역 세로선 ===== */
@@ -106,37 +132,7 @@ body::after {
 /* 기존 .container width를 변수로 */
 .container { width: var(--container-w); }
 
-/* GNB: 높이 고정 + 수직 가운데 정렬 */
-.gnb{
-  display:flex;
-  justify-content:center;
-  align-items:center;    /* 폰트 달라도 높이 동일 */
-  height: var(--gnb-h);
-  border-bottom:1px solid #666;
-  background:#fff;
-}
-.gnb a{
-  padding: 0 30px;       /* 세로 패딩 제거해서 높이 고정 */
-  line-height: 1;        /* 폰트 메트릭 영향 최소화 */
-  text-decoration:none;
-  color:#000;
-  font-size:18px;
-}
 
-/* ===== 전역 세로선: 컨테이너 가장자리에 고정 ===== */
-body::before,
-body::after{
-  content:"";
-  position:fixed;
-  top:0; bottom:0;
-  width:0;
-  border-left: 2px solid rgba(102,102,102,.55);
-  pointer-events:none;
-  z-index:9999;
-  transform:none;        /* translateX 제거 */
-}
-body::before{ left: calc(50% - var(--container-w) / 2); } /* 왼쪽 모서리 */
-body::after { left: calc(50% + var(--container-w) / 2); } /* 오른쪽 모서리 */
 
 /* 프로필 구분선(있다면)도 고정 간격 사용 권장 */
 .section-divider{
