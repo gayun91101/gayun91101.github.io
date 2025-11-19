@@ -1,483 +1,629 @@
-/* 기본 리셋 */
 body {
   margin: 0;
-  padding: 0;
-  font-family: "Times New Roman", serif;
+  font-family: 'Pretendard Variable', sans-serif;
+  color: white;
+  background-attachment: fixed;
 }
 
-/* 가운데 고정 컨테이너 */
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  min-height: 100vh;       /* 한 개의 컨테이너만 사용 */
-  box-sizing: border-box;
-}
-
-/* GNB */
+/* 네비게이션 */
 .gnb {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-  border-bottom: 1px solid #666;
-  background: #fff;
-  padding: 0 30px;  /* 좌우 여백 */
-}
-
-.gnb-left .contact,
-.gnb-right .contact {
-  font-family: "Pretendard", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.gnb-center {
-  display: flex;
-  gap: 0; /* 메뉴 사이 붙이기 */
-}
-
-.gnb-center a {
-  padding: 0 15px; /* 메뉴 간격 조절 */
-  font-family: "Times New Roman", serif;
-  font-size: 18px;
-  color: #000;
-  text-decoration: none;
-}
-
-.gnb-center a:hover {
-  text-decoration: underline;
-}
-
-/* 모든 GNB 링크 공통 스타일 */
-.gnb a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1;
-}
-
-/* 가운데 메뉴 전용 */
-.gnb-center a {
-  padding: 0 15px; /* 메뉴 간격 여기서만 제어 */
-}
-
-
-
-.gnb a:hover { text-decoration: underline; }
-
-/* Intro */
-.intro { text-align: left; margin: 60px auto; }
-
-.intro p {
-  font-size: 90px;
-  line-height: 1.2;
-  font-family: "Times New Roman", serif;
-  font-weight: normal;
-  margin: 0;
-  padding-left: 50px;
-  margin: 50px auto;
-}
-
-.inline-img { vertical-align: middle; height: 100px; }
-
-.profile-img {
-  height: 140px !important;
-}
-
-/* 소개 섹션 */
-.section {
-  width: 1200px;
-  margin: 50px auto;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
-  box-sizing: border-box;
-}
-
-.section-body { padding: 40px 50px; font-family: "Pretendard", sans-serif; }
-
-.section .lead { margin: 0 0 20px; font-size: 20px; line-height: 1.8; font-weight: 700; }
-
-.section .bullets { margin: 0; padding: 0; list-style: none; }
-.section .bullets li {
-  position: relative;
-  padding-left: 1.2em;
-  margin: 8px 0;
-  font-size: 18px;
-  line-height: 1.9;
-  font-weight: 500;
-}
-.section .bullets li::before { content: "•"; position: absolute; left: 0; top: 0; }
-
-/* Main Project */
-/* ===== Main Project: 내부 여백 균등 + 이미지 크기 고정 ===== */
-.projects .project {
-  background: #F6F6F6;
-  border-radius: 20px;
-  padding: 40px;                 /* 상하좌우 동일 여백 */
-  display: flex;                 /* 중앙 정렬 */
-  align-items: center;
   justify-content: center;
+  padding: 20px 0;
+  z-index: 10;
 }
 
-/* 기존 width:100% 무력화 (둘 다 강제 적용) */
-.projects .project .project-card {
-  width: auto !important;        /* ← 100% 덮어쓰기 */
-  max-width: 90% !important;     /* 박스의 90%까지만 사용 */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-
-.projects-title {
-  font-family: "Times New Roman", serif;
-  font-weight: normal;
-  font-size: 56px;
-  line-height: 1.2;
-  text-align: center;
-  margin: 0 0 32px;
-}
-
-/* ✅ 1열로 변경 & 간격 조정 */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;   /* 한 줄에 하나씩 */
-  gap: 24px 60px;               /* 세로:16px, 가로:60px */
-  justify-content: center;
-}
-
-.project {
-  display: block;
-  background: #F6F6F6;
-  border-radius: 20px;
-  padding: 40px;   /* ← 가로/세로 동일하게 */
-  max-width: 1000px; 
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-
-
-/* ✅ 이미지는 박스 안을 꽉 채우되 둥글게 */
-.project-card {
-  display: block;
-  width: 80%;       /* ← 100% 대신 80% 정도로 줄이기 */
-  max-width: 800px; /* 필요하면 최대폭 제한 */
-  margin: 0 auto;   /* 가운데 정렬 */
-  height: auto;
-  border: none;
-}
-
-
-/* Read more */
-.projects .read-more{
-  display: block;          /* 줄 바꿔 단독 배치 */
-  width: max-content;      /* 콘텐츠 너비만큼만 */
-  margin: 24px auto 0;     /* 좌우 자동 → 중앙 */
-}
-
-.read-more {
-  color: #111;           /* 원하는 색상 */
-  text-decoration: none; /* 밑줄 제거 */
-}
-.read-more:visited {
-  color: #111;           /* 방문 후에도 같은 색 */
-}
-.read-more:hover {
-  text-decoration: underline; /* 필요시 hover만 밑줄 */
-}
-
-.projects .read-more {
-  display: inline-flex;        /* flex 유지 */
-  align-items: center;         /* 세로 가운데 맞춤 */
-  justify-content: center;     /* 가로 중앙 정렬 */
-  gap: 8px;
-  margin: 24px auto 0;
-  padding: 12px 0;
-  font-family: "Pretendard", sans-serif;
-  font-size: 16px;
-  color: #111;
-  text-decoration: none;
-  width: 100%;                 /* 전체 폭 차지 */
-}
-
-.read-more-ico {
-  width: 24px;
-  height: 24px;
-}
-
-/* ===== Project hover overlay + center button ===== */
-.project {
-  position: relative;        /* 오버레이/버튼 절대배치 기준 */
-  overflow: hidden;
-}
-
-.project .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);  /* 반투명 검은색 */
-  opacity: 0;
-  transition: opacity 260ms ease;
-  pointer-events: none;      /* 클릭 막지 않음 */
-}
-
-.project .view-more {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%) scale(0.96);
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  font-family: "Pretendard", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.15);
-  opacity: 0;
-  transition: opacity 220ms ease, transform 220ms ease;
-  pointer-events: none;      /* 시각만, 포커스는 링크에 */
-}
-
-/* Hover/Foucus 시 노출 */
-.project:hover .overlay,
-.project:focus-visible .overlay { opacity: 1; }
-
-.project:hover .view-more,
-.project:focus-visible .view-more {
-  opacity: 1;
-  transform: translate(-50%,-50%) scale(1);
-}
-
-/* 키보드 포커스 테두리 (접근성) */
-.project:focus-visible {
-  outline: 2px solid #222;
-  outline-offset: 3px;
-}
-
-
-/* Article */
-.article {
-  width: 1200px;          /* ✅ 컨테이너와 동일 고정폭 */
-  margin: 0 auto;         /* ✅ 가운데 정렬 */
-  padding: 40px 50px;     /* 기존 유지 */
-  box-sizing: border-box; /* ✅ 패딩 포함하여 1200px 안에 딱 맞춤 */
-  text-align: center;
-  font-family: "Pretendard", sans-serif;
-}
-
-.article-title {
-  font-family: "Times New Roman", serif;
-  font-weight: normal;
-  font-size: 48px;
-  margin-bottom: 12px;
-}
-.article-desc {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 40px;
-  font-family: "Times New Roman", serif;  /* 설명문 폰트 변경 */
-}
-.article-list { list-style: none; padding: 0; margin: 0 0 32px; }
-.article-list li { border-bottom: 1px solid #999; text-align: left; }
-
-.article-list li a {
-  /* 텍스트와 ↗ 사이만 간격 */
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 16px 0;
-  font-size: 18px;
-  color: #111;
-  text-decoration: none;
-}
-.article-list li a:visited { color: #111; }
-.article-list li a:hover { text-decoration: underline; }
-
-.article-more {
-  display: inline-block;
-  font-size: 14px;
-  color: #111;
-  text-decoration: none;
-   margin-bottom: 80px;
-}
-
-/* Footer: GNB와 동일 폭/정렬, 가로선 정렬 */
-.site-footer {
-  text-align: center;
-  padding: 10px 0;
-  border-top: 1px solid #666;  /* 위쪽 선 */
-  font-size: 14px;
-  color: #666;
-  width: 1200px;       /* 컨테이너랑 동일 폭 */
-  margin: 0 auto;      /* 가운데 정렬 */
-  box-sizing: border-box;
-}
-
-
-
-
-/* ===== 전역 세로선 ===== */
-html, body { height: 100%; }
-body { position: relative; }
-
-/* 왼쪽 라인 */
-body::before {
-  content:"";
-  position:fixed;
-  top:0; bottom:0;
-  left:50%;
-  transform: translateX(-600px) translateZ(0);
-  width:0;
-  border-left: 2px solid rgba(102,102,102,.55);
-  pointer-events:none;
-  z-index:9999;
-}
-/* 오른쪽 라인 */
-body::after {
-  content:"";
-  position:fixed;
-  top:0; bottom:0;
-  left:50%;
-  transform: translateX(600px) translateZ(0);
-  width:0;
-  border-left: 2px solid rgba(102,102,102,.55);
-  pointer-events:none;
-  z-index:9999;
-}
-/* ===== Intro: JS가 있으면 초기엔 약간 아래+투명 → 들어오고 → 둥실 ===== */
-html.js .intro {
-  opacity: 0;
-  transform: translateY(18px);
-  will-change: transform, opacity;
-}
-html.js .intro.is-in {
-  opacity: 1;
-  transform: translateY(0);
-  /* ← 여기 duration을 720ms → 1500ms 정도로 늘리기 */
-  transition: transform 1500ms cubic-bezier(.22,.8,.25,1.05),
-              opacity 1500ms;
-}
-
-
-/* 둥실둥실은 컨테이너 내부 래퍼에만 적용 (자식 줄바꿈 영향 X) */
-.intro-float { will-change: transform; }
-html.js .intro.is-in .intro-float {
-  animation: intro-float 4200ms ease-in-out 900ms infinite;
-}
-
-@keyframes intro-float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-/* 모션 축소 선호 대응 */
-@media (prefers-reduced-motion: reduce) {
-  html.js .intro { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .intro-float { animation: none !important; }
-}
-/* 스크롤-리빌: JS 사용 시 초기값 */
-html.js .section .lead,
-html.js .section .bullets li {
-  opacity: 0;
-  transform: translateY(24px);
-  will-change: transform, opacity;
-}
-
-/* 접근성: 모션 최소화 */
-@media (prefers-reduced-motion: reduce) {
-  html.js .section .lead,
-  html.js .section .bullets li {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-/* Projects: JS 있을 때 초기값 숨김 */
-html.js .projects .project {
-  opacity: 0;
-  transform: translateY(28px);
-  will-change: transform, opacity;
-}
-
-/* 모션 최소화 선호 대응 */
-@media (prefers-reduced-motion: reduce) {
-  html.js .projects .project {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-/* Projects Title: JS 있을 때 초기값 */
-html.js .projects-title {
-  opacity: 0;
-  transform: translateY(28px);
-  will-change: transform, opacity;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.js .projects-title {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-/* ===== Language Section ===== */
-.language {
-  width: 1200px;           /* 세로 가이드와 정렬 */
-  margin: 0 auto 80px;
-  padding: 40px 50px;      /* article 섹션과 동일 여백 */
-  box-sizing: border-box;
-  font-family: "Pretendard", sans-serif;
-}
-
-.language-title {
-  font-family: "Times New Roman", serif;
-  font-weight: normal;
-  font-size: 56px;
-  line-height: 1.2;
-  text-align: center;
-  margin: 0 0 20px;
-}
-
-.language-list {
+.gnb ul {
   list-style: none;
-  margin: 0 0 20px;
+  display: flex;
+  gap: 50px;
+  margin: 0;
   padding: 0;
 }
-.language-list li {
+
+.gnb a {
   position: relative;
-  padding-left: 1.2em;
-  margin: 10px 0;
+  text-decoration: none;
+  color: white;
   font-size: 18px;
-  line-height: 1.9;
+  transition: color 0.3s;
+  padding-bottom: 4px; /* 밑줄 여백 확보 */
 }
-.language-list li::before {
-  content: "•";
+
+/* 밑줄 효과용 가상요소 */
+.gnb a::after {
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
 }
 
-/* Language: 한 줄 링크를 Article 리스트 스타일과 동일하게 */
-.language-exp {
-  display: inline-flex;        /* ↗ 아이콘 정렬 */
-  align-items: center;
-  gap: 6px;
-  padding: 16px 0;             /* 위아래 여백 */
-  width: 100%;                 /* 한 줄 전체 사용 */
-  font-size: 18px;             /* Article 리스트와 동일 */
-  font-weight: 400;            /* 굵기 통일 */
+/* hover & active 상태 */
+.gnb a:hover::after,
+.gnb a.active::after {
+  width: 100%;
+}
+
+.gnb a:hover,
+.gnb a.active {
+  color: #ffffff;
+}
+
+/* ===== HERO IMAGE SECTION ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #732E4D 0%, #12275C 100%);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3; /* 투명도 30% */
+}
+
+/* 세로 위치를 쉽게 바꾸기 위한 변수 (퍼센트나 px 가능) */
+:root {
+  --puzzle-top: 38%;   /* 예: 화면(섹션) 상단에서 35% 위치 */
+}
+
+.hero { position: relative; }
+
+/* 퍼즐 PNG 오버레이 */
+.puzzle {
+  position: absolute;
+  left: 50%;
+  top: var(--puzzle-top);
+  transform: translate(-50%, -50%); /* 가로는 중앙, 세로는 기준점 보정 */
+  width: clamp(200px, 40vw, 520px); /* 반응형 크기 예시: 필요시 수정 */
+  z-index: 2;          /* 배경 이미지 위로 */
+  pointer-events: none; /* 클릭 막힘 방지(메뉴 클릭 등) */
+  opacity: 0.5; /* 투명도 30% */
+}
+/* Noto Serif KR 폰트 불러오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&display=swap');
+
+/* 세로 위치 조절용 변수 */
+:root {
+  --puzzle-top: 35%;
+  --text-top: 35%; /* 문장의 세로 위치 — 퍼센트나 px로 조절 가능 */
+}
+
+/* 문장 스타일 */
+.hero-text {
+  position: absolute;
+  left: 50%;
+  top: var(--text-top);
+  transform: translate(-50%, -50%);
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  z-index: 3; /* 퍼즐보다 위로 */
+}
+
+/* ===== INTRO SECTION: 풀폭 배경 + 1200 컨테이너 ===== */
+.intro-section {
+  width: 100%;
+  background: #000;          /* 전체 가로 검은 배경 */
+}
+
+/* 1200px 컨테이너 */
+.intro-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 좌/우 50:50 */
+  column-gap: 80px;
+  padding: 60px 0;              /* 섹션 세로 여백 */
+}
+
+/* 왼쪽 텍스트: 위쪽 정렬 유지 */
+.intro-text {
+  align-self: start;             /* 위쪽 정렬 */
+  text-align: left;
+  color: #fff;
+  line-height: 1.8;
+}
+
+.intro-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 40px;
+}
+
+.intro-text p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* 오른쪽 태그: 섹션 세로 '정중앙', 우측 정렬 */
+.intro-tags {
+  align-self: center;            /* ★ 세로 가운데 정렬 */
+  justify-self: end;             /* 그리드 셀 기준 오른쪽 붙임 */
+  max-width: 500px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;     /* 내부 태그도 오른쪽 정렬 */
+  gap: 16px;
+}
+
+.intro-tags span {
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 30px;
+  padding: 12px 22px;
+  font-size: 15px;
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+  opacity: 0.95;
+  transition: background 0.25s ease;
+}
+
+
+/* ===== PROJECTS: 흰 배경 + 1200 그리드 ===== */
+.projects a {
+  color: inherit;              /* 글자색 부모 요소 따라감 */
+  text-decoration: none;       /* 밑줄 제거 */
+}
+
+.projects a:hover {
+  text-decoration: underline;  /* (선택) hover 시만 밑줄 */
+}
+
+.projects {
+  width: 100%;
+  background: #fff;     /* 흰 배경이 화면 전체 */
   color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #999; /* 아래 얇은 선 */
-  box-sizing: border-box;
 }
 
-.language-exp:visited { color: #111; }
-.language-exp:hover { text-decoration: underline; }
-.language-exp .arrow { font-weight: 400; }
+.projects-inner {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0 80px; /* 상/하 여백은 취향대로 */
+}
 
+.projects-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
+
+/* 1200 컨테이너에서 2열 = 590px + 590px + 20px 간격 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 590px 590px;
+  column-gap: 20px;
+  row-gap: 64px;
+}
+
+/* 고정 크기 썸네일 */
+.project-thumb {
+  width: 590px;
+  height: 457px;
+  margin: 0 0 18px;
+  overflow: hidden;
+  background: #f2f2f2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 이미지를 영역에 꽉 채우기 */
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 필요하면 contain으로 변경 */
+  display: block;
+}
+
+.project-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* top, right, bottom, left 0 */
+  background: rgba(0, 0, 0, 0); /* 기본은 투명 */
+  transition: background 0.3s ease;
+}
+
+.project-thumb:hover::after {
+  background: rgba(0, 0, 0, 0.4); /* hover 시 반투명 검은 오버레이 */
+}
+
+/* ===== SUB PROJECT SECTION ===== */
+.sub-projects {
+  width: 100%;
+  background: #fff;
+  color: #111;
+}
+
+.sub-inner {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.sub-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.sub-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sub-card {
+  width: 388px;
+}
+
+.sub-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 썸네일 */
+.sub-thumb {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sub-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* 오버레이 효과 */
+.sub-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+}
+
+.sub-card:hover .sub-thumb::after {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.sub-name {
+  font-size: 18px;
+  margin-top: 16px;
+  text-align: left;
+  color: #111;
+}
+
+/* ===== SUB PROJECT SECTION ===== */
+.bx-projects {
+  width: 100%;
+  background: #fff;
+  color: #111;
+}
+
+.bx-inner {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+.bx-title-wrap {
+  display: flex;
+  justify-content: space-between; /* 제목 왼쪽, 설명 오른쪽 */
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.bx-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.bx-desc {
+  font-size: 15px;
+  color: #555;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+
+.bx-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bx-card {
+  width: 388px;
+}
+
+.bx-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 썸네일 */
+.bx-thumb {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bx-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* 오버레이 효과 */
+.bx-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+}
+
+.bx-card:hover .bx-thumb::after {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.bx-name {
+  font-size: 18px;
+  margin-top: 16px;
+  text-align: left;
+  color: #111;
+}
+
+/* ===== VIEW ALL PROJECTS BUTTON ===== */
+.view-all {
+  width: 100%;
+  background: #fff;
+  padding: 60px 0 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.view-all-inner {
+  text-align: center;
+}
+
+/* 공용 버튼 스타일 */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-dark {
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+}
+
+.btn-dark:hover {
+  background: rgba(17, 17, 17, 0.85); /* 원래 색(#111)에 살짝 흰색 투명도 추가된 느낌 */
+  transform: translateY(-2px);
+}
+
+
+.btn-dark:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== RUNNING TICKER ===== */
+.ticker {
+  --speed: 60s;               /* 속도(짧을수록 빠름) */
+  width: 100%;
+  background: #000;
+  color: #fff;
+  overflow: hidden;           /* 영역 밖은 숨김 */
+  padding: 10px 0;            /* 띠 높이 */
+}
+
+.ticker__track {
+  display: inline-block;
+  white-space: nowrap;        /* 줄바꿈 금지 */
+  will-change: transform;
+  animation: ticker-scroll var(--speed) linear infinite;
+  padding-left: 100%;         /* 시작 위치를 오른쪽 밖에서 */
+}
+
+.ticker__item {
+  font-size: 16px;
+  line-height: 1;
+  margin-right: 48px;         /* 문구 간격 */
+}
+
+/* 애니메이션: 오른쪽 -> 왼쪽 무한 루프 */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* 트랙 전체 길이만큼 이동 */
+}
+
+/* 모션 최소화 환경 배려 */
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track { animation: none; }
+}
+
+.ticker:hover .ticker__track { animation-play-state: paused; }
+
+/* ===== ARTICLE LAYOUT ===== */
+.article-sec{
+  width:100%;
+  background:#fff;
+  color:#111;
+  padding:120px 0 220px;
+}
+
+.article-inner{
+  width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1.2fr 2fr; /* 왼쪽 타이틀 / 오른쪽 리스트 */
+  column-gap:80px;
+  align-items:start;
+}
+
+.article-title{
+  font-size:40px;
+  font-weight:800;
+  margin:0;
+}
+
+.article-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:16px; /* 항목 사이 간격 */
+}
+
+.article-list li a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  padding:8px 0 14px;
+  text-decoration:none;
+  color:inherit;
+  border-bottom:2px solid #2a2a2a; /* 얇은 라인 */
+  transition:border-color .2s ease;
+}
+
+.article-list .txt{
+  font-size:16px;
+}
+
+.article-list .arr{
+  font-size:20px;
+  line-height:1;
+  transition: transform .15s ease;
+}
+
+/* hover 효과: 라인 진하게, 화살표 살짝 이동 */
+.article-list li a:hover{
+  border-bottom-color:#000;
+}
+.article-list li a:hover .arr{
+  transform: translateX(4px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left p {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.footer-left .copy {
+  margin-top: 60px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* 오른쪽 네비 */
+.footer-right ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-right a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+}
+
+/* hover/active 밑줄 효과 (GNB 동일) */
+.footer-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.footer-right a:hover::after,
+.footer-right a.active::after {
+  width: 100%;
+}
+
+/* hover 시 색 유지 */
+.footer-right a:hover,
+.footer-right a.active {
+  color: #fff;
+}
+
+/* ===== REVEAL ANIMATION ===== */
+/* 기존 .reveal 정의를 이렇게 바꿔줘 */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance, 24px));
+  transition:
+    opacity var(--reveal-duration, .6s) var(--reveal-ease, ease),
+    transform var(--reveal-duration, .6s) var(--reveal-ease, ease);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 히어로 섹션만 느리게(예: 1.2s) */
+.hero {
+  --reveal-duration: 1.2s;       /* 속도(=지속시간) */
+}

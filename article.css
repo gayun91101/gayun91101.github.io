@@ -1,158 +1,229 @@
-/* 기본 리셋: 기본 폰트는 Pretendard */
 body {
   margin: 0;
-  padding: 0;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
-               Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
-               "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
+  color: white;
+  background-attachment: fixed;
 }
 
-/* 가운데 고정 컨테이너 */
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-/* ===== 전역 세로 가이드 ===== */
-html, body { height: 100%; }
-body { position: relative; }
-body::before,
-body::after {
-  content:"";
-  position:fixed; top:0; bottom:0; width:0;
-  border-left: 2px solid rgba(102,102,102,.55);
-  pointer-events:none; z-index:9999;
-}
-body::before { left:50%; transform: translateX(-600px) translateZ(0); }
-body::after  { left:50%; transform: translateX( 600px) translateZ(0); }
-
-/* ================= GNB ================= */
+/* 네비게이션 */
 .gnb {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-  border-bottom: 1px solid #666;
-  background: #fff;
-  padding: 0 30px;  /* 좌우 여백 */
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 10;
 }
 
-.gnb-left .contact,
-.gnb-right .contact {
-  font-family: "Pretendard", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.gnb-center {
+.gnb ul {
+  list-style: none;
   display: flex;
-  gap: 0; /* 메뉴 사이 붙이기 */
+  gap: 50px;
+  margin: 0;
+  padding: 0;
 }
 
-.gnb-center a {
-  padding: 0 15px; /* 메뉴 간격 조절 */
-  font-family: "Times New Roman", serif;
-  font-size: 18px;
-  color: #000;
-  text-decoration: none;
-}
-
-.gnb-center a:hover {
-  text-decoration: underline;
-}
-
-/* 모든 GNB 링크 공통 스타일 */
 .gnb a {
-  display: flex;
-  align-items: center;
-  height: 100%;
+  position: relative;
   text-decoration: none;
-  color: #000;
+  color: white;
   font-size: 18px;
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1;
+  transition: color 0.3s;
+  padding-bottom: 4px; /* 밑줄 여백 확보 */
 }
 
-/* 가운데 메뉴 전용 */
-.gnb-center a {
-  padding: 0 15px; /* 메뉴 간격 여기서만 제어 */
-}
-.gnb a:hover { text-decoration: underline; }
-
-/* ================ Article 헤더 ================ */
-.article-title,
-.article-desc { font-family: "Times New Roman", serif; }
-
-.article-title {
-  font-weight: 600;
-  font-size: 44px;
-  line-height: 1.2;
-  text-align: center;
-  margin: 72px 0 18px;
+/* 밑줄 효과용 가상요소 */
+.gnb a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
 }
 
-.article-desc {
-  font-size: 16px;
-  color: #555;
-  text-align: center;      /* 가운데 정렬 */
-  max-width: 720px;        /* 길이 제한 */
-  margin: 0 auto 48px;     /* 가운데 배치 */
+/* hover & active 상태 */
+.gnb a:hover::after,
+.gnb a.active::after {
+  width: 100%;
 }
 
-/* ================ 섹션 타이틀 ================ */
+.gnb a:hover,
+.gnb a.active {
+  color: #ffffff;
+}
+
+/* ===== Page container (1200px 고정 폭) ===== */
+.page{
+  max-width:1200px;
+  margin:0 auto;
+  padding:160px 24px 200px; /* 고정 네비 높이 보정 */
+  background:#fff;
+  color:#111; /* body 기본 색이 white라서 여기서 덮어씀 */
+}
+
+/* ===== 상단 인트로: 좌 타이틀 / 우 한줄 ===== */
+.intro{
+  display:grid;
+  grid-template-columns:1fr 2fr; /* 좌:제목, 우:한줄 */
+  align-items:end;
+  gap:24px;
+  margin-bottom:40px;
+}
+
+.intro-title{
+  font-size:24px;
+  font-weight:700;
+  margin:0;
+  color:#111;
+}
+
+.intro-lede{
+  margin:0;
+  text-align:right;
+  line-height:1.7;
+  color:#333;
+}
+
+/* ===== 실무 진행 경험 섹션 ===== */
+.section01 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
 .section-title {
-  font-weight: 700;
-  font-size: 18px;
-  margin: 0 auto 12px;
-  max-width: 900px;        /* 내용 폭과 동일하게 */
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111;
 }
 
-/* ================ 리스트 ================ */
-/* 리스트 전체 폭을 컨테이너보다 좁게 → 선이 살짝 짧고 가운데 정렬 */
+/* 리스트 영역 */
 .article-list {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 0 auto 36px;     /* 가운데 정렬 */
-  max-width: 900px;        /* 선 길이 조절 포인트 */
+  border-bottom: 1px solid #000;
 }
+
 .article-list li {
-  border-bottom: 1px solid #999;
-  text-align: left;
+  margin: 0;
 }
-.article-list li a {
-  display: inline-flex;
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 6px;
   padding: 18px 0;
-  font-size: 18px;
-  color: #111;
+  border-bottom: 1px solid #000;
   text-decoration: none;
-  font-family: inherit;    /* Pretendard */
-}
-.article-list li a:visited { color: #111; }
-.article-list li a:hover { text-decoration: underline; }
-
-/* 반응형(선 길이 단계적으로 줄이기 원하면 사용) */
-@media (max-width: 1280px) {
-  .container { width: 100%; padding: 0 32px; }
-  body::before { transform: translateX(-50vw); }
-  body::after  { transform: translateX( 50vw); }
-}
-@media (max-width: 768px) {
-  .article-title { font-size: 36px; }
-  .article-list, .section-title { max-width: 100%; }
+  color: inherit;
 }
 
-.site-footer {
-  text-align: center;
-  padding: 10px 0;              /* 푸터 내부 위/아래 공간 */
-  border-top: 1px solid #666;   /* 위쪽 선 */
+.article-list li:last-child .row {
+  border-bottom: none;
+}
+
+.row-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.row:hover .arrow {
+  transform: translateX(4px);
+}
+
+.section02 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.section03 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.section04 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left p {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.footer-left .copy {
+  margin-top: 60px;
   font-size: 14px;
-  color: #666;
-  width: 1200px;                /* 컨테이너랑 동일 폭 */
-  margin: 120px auto 0;          /* 본문과의 간격 ↑ */
-  box-sizing: border-box;
+  opacity: 0.8;
 }
 
+/* 오른쪽 네비 */
+.footer-right ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-right a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+}
+
+/* hover/active 밑줄 효과 (GNB 동일) */
+.footer-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.footer-right a:hover::after,
+.footer-right a.active::after {
+  width: 100%;
+}
+
+/* hover 시 색 유지 */
+.footer-right a:hover,
+.footer-right a.active {
+  color: #fff;
+}

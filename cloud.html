@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구름과 펜촉</title>
+  <!--pretendard 로드-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendardvariable.css" />
+  <link rel="stylesheet" href="cloud.css" />
+</head>
+<body>
+ <!-- GNB -->
+ <nav class="gnb">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="https://my.surfit.io/w/125142535" target="_blank">Resume</a></li>
+    </ul>
+ </nav>
+ <!-- 히어로 섹션 -->
+<section class="hero">
+    <img src="src/assets/image/cloud_main.png" alt="background" class="hero-image">
+</section>
+<section class="overview">
+  <div class="container-overview">
+    <div class="overview-left">
+      <h2 class="overview-title">브랜드 개요</h2>
+    </div>
+    <div class="overview-right">
+        <strong>구름과 펜촉은 ‘글을 잘 쓰는 사람’이 아닌, ‘글을 쓰고 싶은 사람’을 위한 공책 브랜드이다.</strong><br>
+        ‘구름’은 무한한 상상력과 자유로움을, ‘펜촉’은 그것을 현실로 옮기는 창작의 행위를 의미한다.<br>
+        글쓰기는 잘 쓰는 것이 아니라 ‘나의 언어로 표현하는 것’ 이다.
+    </div>
+  </div>
+</section>
+<div class="cloud-logo">
+    <img src="src/assets/image/cloud_logo.png" alt="v2메인" class="logo">
+</div>
+<div class="banner-wrap">
+  <img class="banner-img" src="src/assets/image/cloud_1.png" alt="banner" />
+</div>
+<div class="colud-wrap">
+  <img class="cloud-img" src="src/assets/image/cloud_2.png" alt="cloud" />
+</div>
+<section class="overview overview--margin">
+  <div class="container-overview">
+    <div class="overview-left">
+      <h2 class="overview-title">브랜드 미션</h2>
+    </div>
+    <div class="overview-right">
+        <strong>“별거 아닌 글이어도, 나만의 글을 쓰자.”</strong><br>
+        구름과펜촉은 모든 이가 자기만의 문장을 발견하도록 돕는 <br> 
+        누구나 자신만의 속도로 써 내려갈 수 있도록 돕는 공책 브랜드이다.
+    </div>
+  </div>
+</section>
+<div class="colud-wrap">
+  <img class="cloud-img" src="src/assets/image/cloud_note1.png" alt="cloud" />
+</div>
+<div class="colud-wrap">
+  <img class="cloud-img" src="src/assets/image/cloud_note2.png" alt="cloud" />
+</div>
+<div class="colud-wrap">
+  <img class="cloud-img" src="src/assets/image/cloud_note3.png" alt="cloud" />
+</div>
+<div class="text">
+    <p>구름과 펜촉은 ‘쓰는 사람’을 위한 브랜드가 아니라, ‘쓰고 싶은 마음’을 만들어내는 브랜드로 존재한다.</p>
+</div>
+<div class="colud-wrap">
+  <img class="cloud-img" src="src/assets/image/cloud_note4.png" alt="cloud" />
+</div>
+<div class="colud-wrap">
+  <img class="cloud-img" src="src/assets/image/cloud_note5.png" alt="cloud" />
+</div>
+<footer class="footer-wrap">
+  <div class="footer-left01">© 2025 Lee Ga Yun.</div>
+  <div class="footer-right01">
+  </div>
+</footer>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <p><strong>gayun9110@gmail.com</strong></p>
+      <p><strong>01089832923</strong></p>
+      <p class="copy">© 2025 Lee Ga Yun.</p>
+    </div>
+    <div class="footer-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="https://my.surfit.io/w/125142535" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // 실제 문서에 존재하는 블록만 타겟팅
+  const candidates = document.querySelectorAll(
+    "section, .cloud-logo, .banner-wrap, .colud-wrap, .text"
+  );
+
+  // hero/nav/footer 제외
+  const targets = [...candidates].filter(el =>
+    !el.classList.contains("hero") &&
+    !el.closest("nav") &&
+    !el.closest("footer")
+  );
+
+  // 스크롤 등장 클래스 부여
+  targets.forEach(el => el.classList.add("scroll-reveal"));
+
+  // 관찰자: 살짝 여유 있게 트리거되도록 설정
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target); // 1회만
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: "0px 0px -10% 0px"
+  });
+
+  targets.forEach(el => io.observe(el));
+});
+</script>
+</body>
+</html>

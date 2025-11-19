@@ -1,0 +1,414 @@
+body {
+  margin: 0;
+  font-family: 'Pretendard Variable', sans-serif;
+  background-color: #000;
+  background-attachment: fixed;
+}
+
+/* 네비게이션 */
+.gnb {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 10;
+}
+
+.gnb ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.gnb a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+  padding-bottom: 4px; /* 밑줄 여백 확보 */
+}
+
+/* 밑줄 효과용 가상요소 */
+.gnb a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+/* hover & active 상태 */
+.gnb a:hover::after,
+.gnb a.active::after {
+  width: 100%;
+}
+
+.gnb a:hover,
+.gnb a.active {
+  color: #ffffff;
+}
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;      /* 화면 전체 높이 */
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 비율 유지 + 꽉 채우기 */
+  transform: translate(-50%, -50%);
+}
+
+/* 공통 컨테이너: 가운데 정렬 + 최대 1200px */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;       /* 화면이 줄어들 때 좌우 여백 */
+  box-sizing: border-box;
+}
+
+/* OVERVIEW 섹션 */
+.overview {
+  position: relative;
+  padding: 140px 0 80px; /* 상단 고정 GNB와 간격 */
+  color: #fff;
+}
+
+/* 제목은 중앙 정렬(스크린샷 느낌) */
+.overview-title {
+  margin: 0 0 40px;
+  text-align: right;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* 본문 블록을 컨테이너의 '오른쪽'에 붙이기 */
+.overview-text {
+  max-width: 700px;   /* 문단 너비(원하면 숫자 조절) */
+  margin-left: auto;  /* ↔ 포인트: 오른쪽으로 밀착 */
+  text-align: right;  /* 텍스트 자체도 오른쪽 정렬 */
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+}
+
+.overview-text-style{
+    font-size: 24px;
+    line-height: 1.9;
+    font-weight: 700;
+    text-align: right; 
+}
+
+
+.mockup-image{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative; 
+}
+
+.goal-title {
+  margin: 0 0 40px;
+  text-align: left;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.goal-icons {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.black-section-goal{
+  position: relative;
+  padding: 140px 0 80px; /* 상단 고정 GNB와 간격 */
+  color: #fff;
+  background-color: #161616;
+  margin-top: -100px;
+  padding: 120px;
+}
+
+.interview-title{
+  margin: 0 0 40px;
+  text-align: right;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-top: 150px;
+}
+
+.goal-text-style{
+    font-size: 24px;
+    line-height: 1.9;
+    font-weight: 700;
+    text-align: left; 
+}
+
+.interview-img{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1200px;
+  margin-top: 70px;
+}
+
+.key-section{
+  position: relative;
+  color: #fff;
+}
+
+
+.key-title{
+  margin: 0 0 40px;
+  text-align: left;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+    position: absolute;
+  top: 60px;                /* 👈 이미지 위에서 얼마만큼 떨어질지 조정 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 72px;
+  font-weight: 800;
+  color: #fff;
+  z-index: 3;               /* 글자가 박스 위로 오도록 */
+  letter-spacing: 2px;
+  margin-top: 60px;
+}
+
+.key-area{
+  position: relative;
+  width: 100%;
+  height: 100vh;      /* 화면 전체 높이 */
+  overflow: hidden;
+  text-align: left;
+}
+
+.key-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 850px;
+  object-fit: cover;  /* 비율 유지 + 꽉 채우기 */
+  transform: translate(-50%, -50%);
+  margin-top: -150px
+}
+
+/* === KEY glass cards === */
+.key-area { position: relative; }
+.key-img { z-index: 0; }
+
+.key-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 28px; padding: 0 24px;
+  z-index: 2;           /* 이미지 위로 */
+  pointer-events: none; /* 겹쳐도 클릭 방해 X */
+  transform: translateY(-100px);
+}
+
+.glass-card {
+  width: min(1100px, 100%);
+  padding: 28px 40px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #111;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+
+.glass-card .label {
+  font-weight: 800; font-size: 20px; white-space: nowrap;
+}
+.glass-card .text {
+  font-size: 18px; opacity: 0.9; text-align: right;
+}
+
+/* === Pain(t) Point section === */
+.pain-section {
+  color: #fff;
+  margin-top: -100px;
+}
+
+.pain-title {
+  text-align: center;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0 0 48px;
+}
+
+.pain-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* 카드 스타일: 어두운 유리 느낌 */
+.pain-card {
+  background: rgba(255, 255, 255, 0.08);          /* #3f3f3f 근사치 */
+  border: 1.5px solid rgba(255, 255, 255, 0.35);  /* 연한 회색 보더 */
+  border-radius: 28px;
+  padding: 34px 48px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 8px 30px rgba(0,0,0,0.40);
+}
+
+.pain-card p {
+  margin: 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.mockup-area--margin{
+    margin-top: 200px;
+}
+
+.pink-section{
+    background-color: #FFF5F7;
+    margin-top: 200px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left p {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.footer-left .copy {
+  margin-top: 60px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* 오른쪽 네비 */
+.footer-right ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-right a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+  padding-bottom: 4px;
+}
+
+/* hover/active 밑줄 효과 (GNB 동일) */
+.footer-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.footer-right a:hover::after,
+.footer-right a.active::after {
+  width: 100%;
+}
+
+/* hover 시 색 유지 */
+.footer-right a:hover,
+.footer-right a.active {
+  color: #fff;
+}
+
+.footer-wrap {
+  max-width: 1200px;        /* 빨간선(컨테이너) */
+  margin: 0 auto;           /* 가운데 정렬 */
+  display: flex;            /* 좌우 배치용 */
+  justify-content: space-between; /* 양 끝 정렬 */
+  align-items: center;      /* 세로 기준 맞춤 */
+  padding: 40px 0;          /* 위아래 여백 */
+  margin-top: 200px;
+}
+
+.footer-left01 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.footer-right01 {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* → 아이콘 등과 간격 */
+  color: #000;
+}
+
+.next-link{
+    color: #000;
+}
+
+.pink-section .mockup-image--margin {
+  margin-top: 100px;
+}
+
+.pink-section {
+  background-color: #FFF5F7;
+  margin-top: 100;          /* 필요하면 0으로 */
+  display: flow-root;     /* ← 마진 겹침 방지 */
+}
+
+.mockup-image--margin02{
+    margin-top: 170px;
+}

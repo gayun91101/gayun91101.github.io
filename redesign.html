@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goodduck Redesign</title>
+  <!--pretendard 로드-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendardvariable.css" />
+  <!-- Roboto Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="redesign.css" />
+</head>
+<body>
+ <!-- GNB -->
+ <nav class="gnb">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="https://my.surfit.io/w/125142535" target="_blank">Resume</a></li>
+    </ul>
+ </nav>
+<!-- Hero -->
+<section class="hero">
+  <div class="container-hero">
+    <div class="hero-left">
+      <!-- 로고 이미지 경로는 수정해서 사용 -->
+      <img src="src/assets/image/redesign_logo.png" alt="GOODDUCK" class="hero-logo" />
+      <p class="hero-sub">GOODDUCK 3.0 UXUI Redesign Project</p>
+    </div>
+    <div class="hero-right">
+      <p class="hero-kicker">아티스트와 팬이 직접 소통할 수 있는 팬덤 플랫폼</p>
+    </div>
+  </div>
+</section>
+<section class="main">
+    <div class="main-img">
+        <img src="src/assets/image/redesign_main.png">
+    </div>
+</section>
+<!-- 기존 overview 섹션 교체 -->
+<section class="overview">
+  <div class="container-overview">
+    <div class="overview-left">
+      <h2 class="overview-title">OVERVIEW</h2>
+      <p class="overview-desc">
+        굿덕은 아티스트와 팬을 연결하는 플랫폼으로, 기존에는 마스코트 캐릭터 ‘더기’와
+        강렬한 주황색 컬러를 <br> 중심으로 한 귀엽고 친근한 이미지를 강조해왔습니다.
+        그러나 실제 아티스트와 팬 인터뷰 결과,<br> 특정 캐릭터성과 색감이
+        브랜드 정체성을 과도하게 한쪽으로 치우치게 만들어<br>
+        다양한 아티스트와 조화를 이루지 못한다는 문제가 드러났습니다.
+      </p>
+      <p class="overview-desc">
+        브랜드가 제공해야 할 본질적인 가치(아티스트와 팬의 관계)가 캐릭터성에 가려지고,<br>
+        일부 아티스트는 굿덕과의 이미지 불일치를 지적하기도 했습니다.<br>
+        따라서 브랜드를 보다 중립적이고 유연한 정체성으로 재정립하여,<br>
+        다양한 아티스트와 어울릴 수 있으며 동시에 제품 전반의 디자인 경험을
+        일관되게 만드는 것이 필요했습니다.
+      </p>
+    </div>
+    <div class="overview-right">
+      <img src="src/assets/image/redesign_overview.png" alt="" class="overview-card" />
+    </div>
+  </div>
+</section>
+<!-- User Research -->
+<section class="research">
+  <div class="container-research">
+    <p class="eyebrow">USER RESEARCH</p>
+    <h2 class="research-title">
+      아티스트와 팬 유저 총 20명의 인터뷰 진행<br>
+      ‘굿덕에 대한 인상’ 조사
+    </h2>
+    <p class="research-intro">
+      굿덕의 브랜드는 친근하고 귀여운 이미지로 인식되지만, <br> 이는 특정 아티스트와의 조화를 방해하거나
+      서비스 본질(아티스트와 팬의 연결)을 희석시킬 수 있음이 확인되었습니다.
+    </p>
+
+    <div class="quotes-grid">
+      <article class="quote-card">
+        <p class="quote">일단 오리가 떠오르지 않나요?</p>
+        <span class="quote-user">USER 01</span>
+      </article>
+
+      <article class="quote-card">
+        <p class="quote">
+          사실 저희 밴드 이미지를 생각해보면 굿덕이 주는 프렌들리한 느낌이랑은
+          좀 거리감이 있잖아요.
+        </p>
+        <span class="quote-user">USER 02</span>
+      </article>
+
+      <article class="quote-card">
+        <p class="quote">
+          캐릭터에서 주는 것도 있고 그 어플 내 색감이라든지 그런 것들이
+          조금 말랑말랑한 느낌이 있는 것 같아요.
+        </p>
+        <span class="quote-user">USER 03</span>
+      </article>
+
+      <article class="quote-card">
+        <p class="quote">약간 너무 귀여운 이미지</p>
+        <span class="quote-user">USER 04</span>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- Design Principles -->
+<section class="principles">
+  <div class="container-principles">
+    <p class="eyebrow inv">Design Principles</p>
+    <p class="pr-intro">
+        모든 아티스트를 포괄할 수 있는 깔끔하고 정직한, <br> 누구든 무난하게 이용할 수 있는 명료한 디자인으로 방향성을 정해 <br> 브랜드 디자인 원칙을 세우고 그에 어긋나지 않게 디자인했습니다.
+    </p>
+    <div class="pr-cards">
+      <article class="pr-card">
+        <h3 class="pr-card-title">Simple</h3>
+        <div class="pr-card-body">
+          <p class="pr-kicker">깔끔함</p>
+          <p>UI 디자인은 군더더기 없이 깔끔하고<br>명료하며 깨끗해야 한다.</p>
+        </div>
+      </article>
+
+      <article class="pr-card">
+        <h3 class="pr-card-title">Honest</h3>
+        <div class="pr-card-body">
+          <p class="pr-kicker">정직한</p>
+          <p>쓸데없는 기교나<br>독창적인 디자인이 없어야 한다.</p>
+        </div>
+      </article>
+
+      <article class="pr-card">
+        <h3 class="pr-card-title">Equitable</h3>
+        <div class="pr-card-body">
+          <p class="pr-kicker">공평한</p>
+          <p>모든 아티스트들을 환영하고<br>차별없이 디자인한다.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- Mockup Showcase -->
+<section class="mockup-area">
+  <div class="container-mockup">
+    <img src="src/assets/image/redesign_mockup.png" class="mockup-pair"/>
+  </div>
+</section>
+<!-- Feature Pairs -->
+<section class="features">
+  <div class="container-features">
+    <!-- Row 1: 이미지 왼쪽, 텍스트 오른쪽(좌측정렬) -->
+    <div class="pair">
+      <div class="pair-img">
+        <!-- 왼쪽 핸드폰 목업 -->
+        <img src="src/assets/image/redesign_home.png" alt="Home 화면 목업">
+      </div>
+      <div class="pair-copy">
+        <h3>Home</h3>
+        <p>홈 화면은 가장 많이 사용하는 핵심 기능을 위주로 구성했습니다.<br>
+            데이터 기준으로 굿톡은 전체 유저의 91.4%가 사용했고, <br> 캘린더는 94.6%가 이용했습니다. <br>
+            이에 따라 굿톡과 캘린더를 상단에 배치했습니다.<br>
+            이전에는 굿톡이 중간 영역에 위치해 알림창을 통해서만 접근할 수 있었으나, <br>
+            가장 많이 쓰이는 기능인 만큼 홈에서 바로 접근할 수 있도록 UI를 제공했습니다. <br>
+            또한 캘린더 정보 역시 홈 화면에서 직관적으로 확인할 수 있도록 구성했습니다.<br>
+            한편, 전체 유저의 12%만 사용하는 공지 영역은<br> 제목만 간략히 노출하여 공간 활용도를 높였습니다.</p>
+      </div>
+    </div>
+    <!-- Row 2: 이미지 오른쪽, 텍스트 왼쪽(우측정렬) -->
+    <div class="pair reverse">
+      <div class="pair-img">
+        <!-- 오른쪽 핸드폰 목업 -->
+        <img src="src/assets/image/redesign_artistprofile.png" alt="Artist Profile 화면 목업">
+      </div>
+      <div class="pair-copy">
+        <h3>Artist Profile</h3>
+        <p>아티스트를 소개하는 아티스트 프로필 화면입니다.<br> 아티스트를 팔로우하기 전에 아티스트 정보를 확인할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="UI-ELEMENTS">
+    <div class="container-elements">
+      <div class="pair-copy"><h3>UI ELEMENTS</h3></div>
+          <div class="elements-img">
+        <img src="src/assets/image/redesign_elements.png" alt="컬러">
+    </div>
+    </div>
+</section>
+<!-- Feature Pairs -->
+<section class="features">
+  <div class="container-features">
+    <!-- Row 1: 이미지 왼쪽, 텍스트 오른쪽(좌측정렬) -->
+    <div class="pair">
+      <div class="pair-img">
+        <!-- 왼쪽 핸드폰 목업 -->
+        <img src="src/assets/image/redesign_goodtalk.png" alt="Home 화면 목업">
+      </div>
+      <div class="pair-copy">
+        <h3>GoodTalk Live</h3>
+        <p>어떤 아티스트가 라이브를 진행하는지 알고 들어오는 경우가 많기 때문에,<br>
+            다른 영역의 비중을 위해 프로필 영역은 최소화하였습니다.<br>
+            아티스트가 올린 사진은 별도의 영역에서 확인할 수 있도록 분리했습니다. <br>
+            또한 아티스트 채팅 고정 기능을 추가해 중요한 대화가 묻히지 않게 했습니다. <br>
+            더불어 필요할 경우 채팅창을 가려 불편함을 줄일 수 있는 접기 기능을 제공했습니다.</p>
+      </div>
+    </div>
+    <!-- Row 2: 이미지 오른쪽, 텍스트 왼쪽(우측정렬) -->
+    <div class="pair reverse">
+      <div class="pair-img">
+        <!-- 오른쪽 핸드폰 목업 -->
+        <img src="src/assets/image/redesign_audio.png" alt="Artist Profile 화면 목업">
+      </div>
+      <div class="pair-copy">
+        <h3>Audio Inbox</h3>
+        <p>아티스트가 가이드 음원이나 데모곡,일상 녹음 등<br>
+        본인이 올리고 싶은 녹음파일을 자유롭게 올리고<br>
+        팬들이 감상가능한 ‘굿덕사서함' 화면입니다.  </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="feature-hero">
+  <img src="src/assets/image/redesign_fancafe.png" alt="앱 주요 아티스트 이미지">
+</section>
+<section class="features features--margin">
+  <div class="container-features">
+    <!-- Row 1: 이미지 왼쪽, 텍스트 오른쪽(좌측정렬) -->
+    <div class="pair">
+      <div class="pair-img">
+        <!-- 왼쪽 핸드폰 목업 -->
+        <img src="src/assets/image/redesign_feed.png" alt="Home 화면 목업">
+      </div>
+      <div class="pair-copy">
+        <h3>Artist Main - Feed</h3>
+        <p>아티스트 전용 공간인 아티스트 메인에서 아티스트가 올린 피드를 확인할 수 있습니다.<br>
+            스크롤을 내려도 아티스트 키컬러가 상단을 차지하고 있어 <br> 여전히 해당 아티스트의 공간에 있다는 느낌을 줄 수 있고 <br>아티스트의 아이덴티티를 강조할 수 있습니다.
+      </div>
+    </div>
+  </div>
+</section>
+<section class="feature-calendar">
+  <div class="container-calendar">
+    <!-- 왼쪽 텍스트 -->
+    <div class="calendar-copy">
+      <h3>Calendar</h3>
+      <p>팔로우한 아티스트의 일정을 <br>한눈에 확인할 수 있습니다.<br>
+      선택한 아티스트의 일정만 보고싶으면<br>
+      상단의 필터 아이콘에서 아티스트를 <br>선택 가능합니다.</p>
+    </div>
+    <!-- 오른쪽 목업 2개 -->
+    <div class="calendar-mockups">
+      <img src="src/assets/image/redesign_calendar1.png" alt="캘린더 화면 목업">
+      <img src="src/assets/image/redesign_calendar2.png" alt="공연 상세 화면 목업">
+    </div>
+  </div>
+</section>
+<section class="feature-mypage">
+  <div class="container-mypage">
+    <!-- 왼쪽: 목업 2개 -->
+    <div class="mypage-mockups">
+      <img src="src/assets/image/redesign_mypage.png" alt="마이페이지 메인 화면 목업">
+      <img src="src/assets/image/redesign_mypage2.png" alt="주문 상세 화면 목업">
+    </div>
+    <!-- 오른쪽: 텍스트 -->
+    <div class="mypage-copy">
+      <h3>My Page</h3>
+      <p>내 게시물, 북마크, 구매 상품, 멤버십 카드<br>
+      아티스트 관리, 설정을 <br>나의 화면에서 확인 가능합니다.</p>
+    </div>
+  </div>
+</section>
+<footer class="footer-wrap">
+  <div class="footer-left01">© 2025 Lee Ga Yun.</div>
+  <div class="footer-right01">
+   <a href="chat.html" class="next-link">Next Project →</a>
+  </div>
+</footer>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <p><strong>gayun9110@gmail.com</strong></p>
+      <p><strong>01089832923</strong></p>
+      <p class="copy">© 2025 Lee Ga Yun.</p>
+    </div>
+    <div class="footer-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="https://my.surfit.io/w/125142535" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script>
+  // 1) 대상: 페이지의 모든 section (gnb/nav, footer 제외)
+  const targets = document.querySelectorAll('section');
+
+  // 2) 초기 상태 클래스 부여
+  targets.forEach(el => el.classList.add('reveal'));
+
+  // 3) 관찰자: 섹션이 15% 보이면 노출 처리 (1번만)
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.classList.add('is-visible');
+        observer.unobserve(el); // 한 번만 애니메이션
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -5% 0px' // 살짝 빨리 재생
+  });
+
+  targets.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

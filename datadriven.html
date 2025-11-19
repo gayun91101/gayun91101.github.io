@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data-driven Design</title>
+  <!--pretendard 로드-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendardvariable.css" />
+  <!-- Roboto Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="datadriven.css" />
+</head>
+<body>
+ <!-- GNB -->
+ <nav class="gnb">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="https://my.surfit.io/w/125142535" target="_blank">Resume</a></li>
+    </ul>
+ </nav>
+  <!-- 그라데이션 영역 -->
+ <section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Data-driven Design</h1>
+        <p class="hero-desc">데이터로 검증한 UX 개선</p>
+    </div>
+ </section>
+ <section class="summary-black-section">
+    <div class="content-wrap">
+        <div class="summary-title">Summary</div>
+        <div class="summary-subtitle">Key Responsibilities</div>
+        <ul class="summary-list">
+            <li><strong>사용자 인터뷰 및 데이터 분석  :</strong>앰플리튜드 분석과 아티스트 인터뷰를 진행해서 주요 페인포인트를 발견했어요.</li>
+            <li><strong>디자인 솔루션 탐색 :</strong>실제 사용 시나리오에 맞는 개선안을 설계하고 실행 가능성이 높은 솔루션을 제안했어요.</li>
+        </ul>
+        <div class="goal-card">
+            <p class="goal-eyebrow">Ploblem</p>
+            <p class="goal-body">1. 아티스트가 일정을 업로드할 때 날짜 클릭 후 업로드 버튼을 누르고  <strong>일정 상세 화면에서 다시 날짜를 선택해야 하는 불편함이 있었어요.</strong></p>
+            <div class="goal-body goal-body--margin">2. 아티스트가 자신의 피드를 보려면 홈 → 메인화면으로 이동 → 아티스트 탭 클릭 등 <strong>여러 번 클릭해야 하는 불편함이 있었어요.</strong></div>
+        </div>
+        <div class="goal-card">
+            <p class="goal-eyebrow">My Solution</p>
+            <p class="goal-body">1. 날짜 클릭 시 자동으로 업로드 버튼에 해당 날짜를 반영하게 했어요. 캘린더에서 8월 15일 날짜를 클릭하면 <br> ‘8월 15일 일정 업로드하기’ 버튼으로 나타나요. 그 상태에서 상세에 진입하면 <strong>선택한 날짜로 지정되어 있어요.</strong></p>
+            <div class="goal-body goal-body--margin">2. 아티스트 홈 화면에<strong>‘내 피드 바로가기’</strong> 버튼을 만들었어요.</div>
+        </div>
+        <div class="goal-card">
+            <p class="goal-eyebrow">Impact</p>
+            <div class="goal-heading">캘린더를 업로드하는 아티스트 유저들이 50% 증가했어요!</div>
+        </div>
+    </div>
+</section>
+<section class="intro-white-section">
+    <p class="goal-eyebrow">배경</p>
+    <div class="cv-title">5명의 아티스트 인터뷰</div>
+    <div class="cv-lead">1. 인터뷰에서 3명의 아티스트가 “캘린더에서 날짜를 클릭하고 업로드 버튼 누른 후 상세에서 <strong>다시 날짜를 선택해야 해서 불편하다.</strong> <br>
+      날짜를 클릭하고 바로 등록하고 싶다.” 라는 페인포인트가 있었어요.</div>
+    <div class="cv-lead">2. 인터뷰에서 아티스트가 <strong>“내 피드를 보러가기까지 클릭이 너무 많아서 불편하다” </strong>라는 페인포인트가 있었어요. <br> 실제로 피드로 가려면 홈 → 메인화면 → 아티스트 탭 플로우를 거쳐야했어요.</div>
+    <p class="goal-eyebrow goal-eyebrow--margin">데이터로 검증하기</p>
+    <div class="cv-title">그렇다면 소수의 아티스트가 아닌, <br> 대부분의 아티스트들은 어떨지 데이터로 확인해보았어요.</div>
+    <div class="cv-lead">1. 실제로는 날짜를 클릭하지 않아도, 업로드버튼을 누르고 바로 상세로 진입할 수 있어요.<br> <strong>그러나 약 47% 아티스트가 날짜를 클릭하고 (Select date) 일정을 업로드 (upload calendar) 하고 있었어요.</strong></div>
+    <div class="selectdata-img">
+        <img src="src/assets/image/datadriven_selectdata.png" alt="날짜 누른 데이터">
+    </div>
+    <div class="cv-lead">2. 약 79.3%의 아티스트가 홈화면에서 피드리스트로 진입하고 있었고, <strong>홈화면에서 여러 루트를 거쳐 진입하고 있었어요.</strong> <br> 홈화면에서 메인을 거쳐 피드 리스트로 진입하는 경우가 많았는데, <strong>이 경우에도 두번의 클릭이 필요했어요.</strong></div>
+    <div class="selectdata-img">
+        <img src="src/assets/image/datadriven_selectdata2.png" alt="날짜 누른 데이터">
+    </div>
+    <p class="goal-eyebrow goal-eyebrow--margin">디자인 여정</p>
+    <div class="cv-title cv-title--margin">사용자의 플로우를 단축시키려면 어떻게 해야할까?</div>
+    <div class="cv-title cv-title--size">1. 캘린더</div>
+    <div class="calendarA-img">
+        <img src="src/assets/image/datadriven_calendarA.png" alt="날짜 누른 데이터">
+    </div>
+    <div class="cv-lead cv-lead--margin">- 가장 직관적이고 유저가 원하는 플로우에요. <br> - 그러나 날짜마다 페이지 이동 처리가 필요하여 개발 공수 때문에 현재 상황에서는 어려웠어요.</div>
+    <div class="calendarA-img">
+        <img src="src/assets/image/datadriven_calendarB.png" alt="날짜 누른 데이터">
+    </div>
+    <div class="cv-lead">- 개발 난이도가 적고, 버튼 누르고 들어가면 클릭한 날짜가 유지되서 유저가 날짜를 다시 선택하지 않아도 되요.<br> 또한 유저에게 “내가 클릭한 날짜가 반영되었다”는 인지 확보가 가능해요.</div>
+    <div class="cv-title cv-title--size--margin">2. 아티스트 피드 접근</div>
+    <div class="calendarA-img">
+        <img src="src/assets/image/datadriven_artistfeedA.png" alt="날짜 누른 데이터">
+    </div>
+    <div class="cv-lead cv-lead--margin">- 피드 진입 플로우는 단축되지만, 아티스트 메인을 보기 어려워지고, 기획과 개발에서 다른 기능과의 충돌 가능성도 있었어요.</div>
+    <div class="calendarA-img">
+        <img src="src/assets/image/datadriven_artistfeedB.png" alt="날짜 누른 데이터">
+    </div>
+    <div class="cv-lead cv-lead--margin">- 홈에 피드와 바로가기 버튼만 추가하면 되어서 개발 공수가 적어져요. <br>
+        - 홈에서 피드를 바로 볼 수 있으니, 피드를 보기 위해 클릭하는 일이 적어져요.<br>
+        - 홈 → 아티스트 피드를 바로 볼 수 있는 유저 니즈를 충족할 수 있어요.
+    </div>
+    <div class="cv-title cv-title--center">의사결정 기준은 “데이터로 검증된 Pain Point를 해결하면서도 <br> 개발 공수를 고려해 가장 실행 가능성이 높은 안을 선택하는 것” </div>
+    <p class="goal-eyebrow goal-eyebrow--margin">성과</p>
+    <div class="cv-title">캘린더를 업로드하는 아티스트 유저들이 50% 증가했어요!</div>
+    <div class="cv-lead">(25년 9월 8일 출시 기준 이전 데이터 비교)</div>
+    <p class="goal-eyebrow goal-eyebrow--margin">회고</p>
+    <div class="cv-lead">이번 프로젝트에서 가장 큰 배움은 “데이터와 실제 사용자 맥락을 동시에 고려해야 한다”는 점이었어요. <br> 처음에는 인터뷰에서 들은 소수의 불편 경험이 과연 보편적인 문제인지 확신하기 어려웠어요. <br>
+        하지만 데이터를 통해 47%와 79.3%라는 수치로 문제를 검증하면서, <br>정성적 인사이트와 정량적 데이터가 맞물릴 때 설득력 있는 문제 정의가 가능하다는 것을 느꼈어요. <br> 
+        또한, 단순히 “유저 입장에서 가장 직관적인 플로우”를 고집하기보다는, <br> 개발 공수·리스크와 사용자 경험을 동시에 고려한 최적의 안을 선택하는 의사결정 과정이 중요하다는 것을 체감할 수 있는 경험이었어요.</div>
+</section>
+ <footer class="footer-wrap">
+  <div class="footer-left01">© 2025 Lee Ga Yun.</div>
+  <div class="footer-right01">
+   <a href="redesign.html" class="next-link">Next Project →</a>
+  </div>
+</footer>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <p><strong>gayun9110@gmail.com</strong></p>
+      <p><strong>01089832923</strong></p>
+      <p class="copy">© 2025 Lee Ga Yun.</p>
+    </div>
+    <div class="footer-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="https://my.surfit.io/w/125142535" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+    
