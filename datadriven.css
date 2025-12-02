@@ -86,7 +86,7 @@ body {
 .summary-black-section{
   position: relative;
   background-color: #171717;
-  height: 1130px; /* 원하는 높이 */
+  height: 900px; /* 원하는 높이 */
   margin-top: -160px; /* gradient와 겹치도록 음수 마진 */
   padding: 60px;
   z-index: 1;
