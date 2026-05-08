@@ -234,49 +234,5 @@
     </div>
   </div>
 </footer>
-<script>
-  (function () {
-    // 대상: 페이지 내 모든 <section> (footer는 <footer>라 자동 제외)
-    const sections = document.querySelectorAll('section');
-
-    // 섹션 안에서 함께 순차 등장시킬 대표 아이템들
-    const childSelectors = [
-      '.projects-inner', '.projects-grid', '.project-card',
-      '.sub-inner', '.sub-grid', '.sub-card',
-      '.bx-inner', '.bx-grid', '.bx-card',
-      '.other-inner', '.other-grid', '.other-card'
-    ];
-
-    // 초기 상태로 reveal 클래스 부여 + 스태거 delay
-    sections.forEach(section => {
-      section.classList.add('reveal');
-
-      let order = 0;
-      childSelectors.forEach(sel => {
-        section.querySelectorAll(sel).forEach(el => {
-          el.classList.add('reveal');
-          el.style.transitionDelay = (order * 0.08) + 's'; // 0.08s 간격
-          order++;
-        });
-      });
-    });
-
-    // IntersectionObserver: 10% 보이면 is-visible 부여
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target); // 한 번만 트리거
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0.1,
-      rootMargin: '0px 0px -10% 0px'
-    });
-
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  })();
-</script>
 </body>
 </html>
